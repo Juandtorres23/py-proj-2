@@ -9,5 +9,21 @@
 </head>
 <body>
     <h1 class="text" id="name"> Cup of Cake! </h1>
+    <a href="{{ url_for('order')}}"> Order </a>
+
+
+    {% for cupcake in cupcakes %}
+
+    <a href="{{ url_for('individual_cupcake', name=cupcake['name']) }}">
+        <h3> {{ cupcake["name"] }} </h3>
+    </a>
+    <h4> Flavor: {{ cupcake["flavor"] }} </h4>
+    <h4> Frosting: {{ cupcake["frosting"] }} </h4>
+    <h4> <b> Price: {{ cupcake["price"] }} </b> </h4>
+    <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
+        <button> Add to Cart </button>
+    </a>
+
+    {% endfor %}
 </body>
 </html>
