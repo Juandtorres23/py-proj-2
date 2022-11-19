@@ -9,17 +9,25 @@
 </head>
 <body>
     <h1 class="text" id="name"> Cup of Cake! </h1>
-    <a href="{{ url_for('home')}}"> Home </a>
-    
-    <a href="{{ url_for('individual_cupcake', name=cupcake['name']) }}">
+    <a class="order_home_button" href="{{ url_for('home')}}"> Home </a>
+
+<div class ="all_cupcakes_container">
+
+ <div class="cupcake_container">
+
+    <a class="cupcake_name" href="{{ url_for('individual_cupcake', name=cupcake['name']) }}">
         <h3> {{ cupcake["name"] }} </h3>
     </a>
     <h4> Flavor: {{ cupcake["flavor"] }} </h4>
     <h4> Frosting: {{ cupcake["frosting"] }} </h4>
     <h4> <b> Price: {{ cupcake["price"] }} </b> </h4>
     <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
-        <button> Add to Cart </button>
+        <button class="add_button"> Add to Cart </button>
     </a>
+
+</div>
+
+</div>
 
 </body>
 </html>
